@@ -22,11 +22,16 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "API is running" });
+});
+
 // Routes
 app.use('/api/services', serviceRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/references', referenceRoutes);
+
 
 // 404 handler
 app.use((req, res, next) => {
