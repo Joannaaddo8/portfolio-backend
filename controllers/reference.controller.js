@@ -54,35 +54,35 @@ export const getAllReferences = async (req, res) => {
 };
 
 export const getReferenceById = async (req, res) => {
-    try {
-        const reference = await Reference.findById(req.params.id);
+  try {
+    const reference = await Reference.findById(req.params.id);
 
-        if (!reference) {
-            return res.status(404).json({
-                success: false,
-                message: "Reference not found."
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            message: "Reference retrieved successfully.",
-            data: {
-                firstname: reference.firstname,
-                lastname: reference.lastname,
-                email: reference.email,
-                position: reference.position,
-                company: reference.company,
-                id: reference._id
-            }
-        });
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: error.message
-        });
+    if (!reference) {
+      return res.status(404).json({
+        success: false,
+        message: "Reference not found"
+      });
     }
+
+    res.status(200).json({
+      success: true,
+      message: "Reference retrieved successfully.",
+      data: {
+        firstname: reference.firstname,
+        lastname: reference.lastname,
+        email: reference.email,
+        position: reference.position,
+        company: reference.company,
+        id: reference._id
+      }
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
 };
 
 export const updateReference = async (req, res) => {

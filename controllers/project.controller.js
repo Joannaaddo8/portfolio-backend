@@ -12,6 +12,9 @@ export const addProject = async (req, res) => {
                 title: savedProject.title,
                 completion: savedProject.completion,
                 description: savedProject.description,
+                technologies: savedProject.technologies,
+                image: savedProject.image,
+                link: savedProject.link,
                 id: savedProject._id
             }
         });
@@ -32,6 +35,9 @@ export const getAllProjects = async (req, res) => {
             title: project.title,
             completion: project.completion,
             description: project.description,
+            technologies: project.technologies,
+            image: project.image,
+            link: project.link,
             id: project._id
         }));
 
@@ -67,6 +73,9 @@ export const getProjectById = async (req, res) => {
                 title: project.title,
                 completion: project.completion,
                 description: project.description,
+                technologies: project.technologies,
+                image: project.image,
+                link: project.link,
                 id: project._id
             }
         });

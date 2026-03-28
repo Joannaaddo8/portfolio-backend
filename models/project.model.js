@@ -12,6 +12,18 @@ const projectSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    technologies: {
+        type: String,
+        required: false
+    },
+    image: {
+        type: String,
+        required: false
+    },
+    link: {
+        type: String,
+        required: false
     }
 });
 

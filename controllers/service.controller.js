@@ -11,6 +11,7 @@ export const addService = async (req, res) => {
             data: {
                 title: savedService.title,
                 description: savedService.description,
+                price: savedService.price,
                 id: savedService._id
             }
         });
@@ -30,6 +31,7 @@ export const getAllServices = async (req, res) => {
         const formattedServices = services.map(service => ({
             title: service.title,
             description: service.description,
+            price: service.price,
             id: service._id
         }));
 
@@ -64,6 +66,7 @@ export const getServiceById = async (req, res) => {
             data: {
                 title: service.title,
                 description: service.description,
+                price: service.price,
                 id: service._id
             }
         });
